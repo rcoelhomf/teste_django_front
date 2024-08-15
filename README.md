@@ -9,7 +9,7 @@ pip install -r requirements.txt
 para rodar a aplicação basta rodar os comandos: 
 
 ```shell
-pyton manage.py migrate
+python manage.py migrate
 ```
 
 ```shell
