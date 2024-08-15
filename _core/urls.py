@@ -20,5 +20,7 @@ from user_register import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('users/', views.usersView, name='users_list'),
+    path('all_users/', views.listUserView, name='all_users')
 ]
