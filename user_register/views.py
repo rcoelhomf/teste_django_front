@@ -1,20 +1,23 @@
+from rest_framework.views import APIView, Request
 from django.shortcuts import render
 from .models import User
 
 def home(request):
     return render(request, 'index.html')
 
-def usersView(request):
-    new_user = User()
-    new_user.username = request.POST.get('name')
-    new_user.password = request.POST.get('password')
-    new_user.save()
+class UserView(APIView):
 
-    return render(request, 'index.html')
+    def post(self, request: Request):
+        new_user = User()
+        new_user.username = request.data.get('username')
+        new_user.password = request.data.get('password')
+        new_user.save()
 
-def listUserView(request):
-    all_users = {
-        'users': User.objects.all()
-    }
+        return render(request, 'index.html')
 
-    return render(request, 'users.html', all_users)
+    def get(self, request: Request):
+        all_users = {
+            'users': User.objects.all()
+        }
+
+        return render(request, 'users.html', all_users)
