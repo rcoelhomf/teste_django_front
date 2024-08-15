@@ -17,4 +17,4 @@ def listUserView(request):
         'users': User.objects.all()
     }
 
-    return render(request, 'users.html',all_users)
+    return render(request, 'users.html', all_users)
