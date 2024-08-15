@@ -6,7 +6,11 @@
 pip install -r requirements.txt
 ```
 
-para rodar a aplicação basta rodar o comando: 
+para rodar a aplicação basta rodar os comandos: 
+
+```shell
+pyton manage.py migrate
+```
 
 ```shell
 python manage.py runserver
