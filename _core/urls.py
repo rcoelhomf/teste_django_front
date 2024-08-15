@@ -19,7 +19,6 @@ from django.urls import path, include
 from user_register import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('users/', include('user_register.urls')),
 ]
