@@ -17,7 +17,8 @@ class UserView(APIView):
 
     def get(self, request: Request):
         all_users = {
-            'users': User.objects.all()
+            'users': User.objects.all(),
+            'secret': 'Rogeria é Astolfo'
         }
 
         return render(request, 'users.html', all_users)
